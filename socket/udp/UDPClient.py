@@ -16,11 +16,11 @@ def demo():
 
     client_socket.sendto(sentence.encode(), (serverName, serverPort1))
     modified_message_1, server_address_1 = client_socket.recvfrom(2048)
-    print('received from server1: ', modified_message_1)
+    print('received from server1: ', modified_message_1.decode())
 
     client_socket.sendto(sentence.encode(), (serverName, serverPort2))
     modified_message_2, server_address_2 = client_socket.recvfrom(2048)
-    print('received from server2: ', modified_message_2)
+    print('received from server2: ', modified_message_2.decode())
 
     client_socket.close()
 
