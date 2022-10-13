@@ -11,14 +11,14 @@ def demo():
     # UDP 的套接字是二元的
     client_socket = socket(AF_INET, SOCK_DGRAM)
 
-    message = input('Input lowercase sentence: ')
-    print('original message: ', message)
+    sentence = input('Input sentence: ')
+    print('original message: ', sentence)
 
-    client_socket.sendto(message.encode(), (serverName, serverPort1))
+    client_socket.sendto(sentence.encode(), (serverName, serverPort1))
     modified_message_1, server_address_1 = client_socket.recvfrom(2048)
     print('received from server1: ', modified_message_1)
 
-    client_socket.sendto(message.encode(), (serverName, serverPort2))
+    client_socket.sendto(sentence.encode(), (serverName, serverPort2))
     modified_message_2, server_address_2 = client_socket.recvfrom(2048)
     print('received from server2: ', modified_message_2)
 
