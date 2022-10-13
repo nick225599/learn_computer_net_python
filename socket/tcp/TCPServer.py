@@ -11,7 +11,7 @@ def demo():
     while True:
         connection_socket, address = server_socket.accept()
         sentence = connection_socket.recv(2048)
-        print("message from client: ", sentence.decode())
+        print("message from client: ", sentence.decode(), ", client address: ", address)
         modified_sentence = sentence.decode().upper()
         connection_socket.send(modified_sentence.encode())
         connection_socket.close()

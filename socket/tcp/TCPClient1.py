@@ -19,6 +19,8 @@ def demo():
     modified_message, server_address = client_socket.recvfrom(2048)
     print('received from server: ', modified_message.decode())
 
+    sentence = input('Input sentence again: ')
+
     client_socket.close()
 
 
