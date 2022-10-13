@@ -6,7 +6,7 @@ def demo():
     server_socket = socket(AF_INET, SOCK_STREAM)
     server_socket.bind(('', server_port))
     server_socket.listen(1)
-    print("tcp server ready, port: ", server_port)
+    print("TCP server ready, port: ", server_port)
 
     while True:
         connection_socket, address = server_socket.accept()
